@@ -24,7 +24,7 @@ void main()
   char str2[16];
   char str3[16];
   
-  SysTick_Config(SystemCoreClock / 12);      
+  SysTick_Config(SystemCoreClock / 9);      
 
   Acc_Init();
   
@@ -33,8 +33,8 @@ void main()
   i2c_init();  
   while(I2C_GetFlagStatus(I2C2, I2C_ISR_BUSY) != RESET);
   
-  LCD_contrast(35);
-  LCD_backlight(2);
+  //LCD_contrast(35);
+  //LCD_backlight(2);
     
 //  BusConfigure();
 //  Write_Lcd_Instr(ON);
@@ -77,12 +77,12 @@ void main()
       SysTick_Flag = 0;
       SysTick_Config(SystemCoreClock / (3 + abs(factor)));  
       int i,j,k;
-      for(i=0; i<strlen(str1); i++)
+    /*  for(i=0; i<strlen(str1); i++)
         LCD_write(0, i, str1[i]);
       for(j=0; j<strlen(str2); j++)
         LCD_write(0, i+j, str2[j]);
       for(k=0; k<strlen(str3); k++)
-        LCD_write(0, i+j+k, str3[k]);
+        LCD_write(0, i+j+k, str3[k]);*/
     }
   }
   
